@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Text Layout</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text">
+        We're here
+        <div class="video" data-index="1"></div>
+
+        to make healthy
+        <div class="video" data-index="2"></div>
+
+        living effortless, so you can
+        <div class="video" data-index="3"></div>
+
+        live longer and happier
+        <div class="video" data-index="4"></div>
+      </div>
+    </div>
+
+    <script>
+      const videos = document.querySelectorAll(".video");
+      videos.forEach((videoDiv, index) => {
+        const video = document.createElement("video");
+        video.src = "./assets/video.mp4";
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        videoDiv.appendChild(video);
+        videoDiv.classList.add(`video${index + 1}`);
+      });
+    </script>
+  </body>
+</html>
